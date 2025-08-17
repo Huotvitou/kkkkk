@@ -1,0 +1,1 @@
+Source placeholder. The app is static; edit files in dist/ for live site.

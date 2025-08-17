@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Login — Vitou Neon Store</title>
+  <link rel="icon" href="../assets/logo.svg">
+  <link rel="stylesheet" href="../assets/style.css"/>
+</head>
+<body>
+  <main class="center">
+    <section class="card-login">
+      <h2>Admin Login</h2>
+      <input id="user" class="input-field" placeholder="Username" />
+      <input id="pass" class="input-field" type="password" placeholder="Password" />
+      <button class="btn-login" onclick="doLogin()">Sign in</button>
+      <div class="helper"><a href="../index.html">⬅ Back to Home</a></div>
+    </section>
+  </main>
+  <script>
+    const ADMIN_USER='admin', ADMIN_PASS='12345';
+    function doLogin(){
+      const u=document.getElementById('user').value.trim();
+      const p=document.getElementById('pass').value;
+      if(u===ADMIN_USER && p===ADMIN_PASS){
+        localStorage.setItem('isLoggedIn','true');
+        location.href='./dashboard.html';
+      }else{
+        alert('Incorrect username or password');
+      }
+    }
+  </script>
+</body>
+</html>
